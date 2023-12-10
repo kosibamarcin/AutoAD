@@ -1,0 +1,32 @@
+{
+    "models": [
+        {
+            "type": "HMM",
+            "params": [25, "full", 200]
+        },
+        {
+            "type": "DENSEAE",
+            "params": [[16, 8, 16], "elu", "sigmoid", 0.1, "rmsprop", "mse"]
+        },
+        {
+            "type": "CONVAE",
+            "params": [[[16, 5, 2], [16, 5, 2], [8, 5, 1]], "same", "elu", "adam", "mse", 16]
+        },
+        {
+            "type": "CONVAE",
+            "params": [[[32, 7, 2], [16, 7, 2], [16, 7, 1]], "same", "elu", "adam", "mse", 32]
+        },
+        {
+            "type": "LSTMAE",
+            "params": [[16, 8, 4], "relu", "rmsprop", "mse", 16]
+        },
+        {
+            "type": "LSTMAE",
+            "params": [[16, 8, 6], "relu", "rmsprop", "mse", 8]
+        },
+        {
+            "type": "LSTM",
+            "params": [[16, 8, 4], "relu", "rmsprop", "mse", 8, 1]
+        }
+    ]
+}
